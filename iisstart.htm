@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Online</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #0072C6;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Productos */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background-color: white;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-item h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            color: #666;
+        }
+
+        .product-item .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #0072C6;
+        }
+
+        .product-item button {
+            background-color: #0072C6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product-item button:hover {
+            background-color: #005a9e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0072C6;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Mi Tienda</div>
+        <div>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Carrito</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+
+    <div id="container">
+        <h1>Bienvenido a nuestra Tienda Online</h1>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 1" />
+                <h2>Producto 1</h2>
+                <p>Descripción breve del producto 1.</p>
+                <p class="price">$19.99</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 2" />
+                <h2>Producto 2</h2>
+                <p>Descripción breve del producto 2.</p>
+                <p class="price">$29.99</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 3" />
+                <h2>Producto 3</h2>
+                <p>Descripción breve del producto 3.</p>
+                <p class="price">$39.99</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
