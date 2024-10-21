@@ -1,210 +1,29 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="EstiloP.css">
    <title>Cuidado Con El Puc</title>	
 	<link rel="icon" href="pugsito.ico">
-   <style>
 
-   </style>
-</head>
-<body>
-   <h1>Cuidado Con El Puc</h1>
-   <h2>Inicio</h2>
-   <h2>Productos</h2>
-   <h2>Contacto</h2>
-   
-   
-   <h5>Somos una compañia encargada de vender productos, 
-      Un porcentaje de nuestras ventas se iran para alguna organizacion benefica</h5>
-=======
-﻿<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online - Cuidado Con El Puc</title>
-    <link rel="icon" href="pugsito.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
 
-        header {
-            background-color: #6f0180;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-
-        #container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .section {
-            width: 45%;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: center;
-            color: #6f0180;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        button {
-            padding: 10px 15px;
-            background-color: #6f0180;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #580169;
-        }
-
-        .product {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-
-        .product h3 {
-            margin: 0;
-            color: #333;
-        }
-
-        .product p {
-            margin: 5px 0;
-        }
-
-        .product button {
-            background-color: #28a745;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Tienda Online - Cuidado Con El Puc</h1>
-        <h5>Somos una compañía encargada de vender productos. Un porcentaje de nuestras ventas irá para alguna organización benéfica.</h5>
-    </header>
+        <a class="pugsito2" href="https//:www.cuidadoconelpuc.com"><img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+        <a href="" class="nav-lin">Inicio</a>
+        <a href="" class="nav-link">Sobre Nosotros</a>
+        <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+    </nav>
+   </header>
 
-    <div id="container">
-        <!-- Sección de vendedores -->
-        <div class="section" id="seller-section">
-            <h2>Agregar Producto (Vendedor)</h2>
-            <div class="form-group">
-                <label for="product-name">Nombre del Producto:</label>
-                <input type="text" id="product-name" placeholder="Ingrese el nombre del producto">
-            </div>
-            <div class="form-group">
-                <label for="product-price">Precio:</label>
-                <input type="number" id="product-price" placeholder="Ingrese el precio">
-            </div>
-            <div class="form-group">
-                <label for="product-description">Descripción:</label>
-                <textarea id="product-description" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
-            </div>
-            <button onclick="addProduct()">Agregar Producto</button>
-        </div>
-
-        <!-- Sección de compradores -->
-        <div class="section" id="buyer-section">
-            <h2>Productos Disponibles (Comprador)</h2>
-            <div id="product-list">
-                <!-- Aquí se mostrarán los productos -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const products = [];
-
-        function addProduct() {
-            // Obtener valores de los campos
-            const name = document.getElementById('product-name').value;
-            const price = document.getElementById('product-price').value;
-            const description = document.getElementById('product-description').value;
-
-            // Verificar que todos los campos estén llenos
-            if (name === '' || price === '' || description === '') {
-                alert('Por favor complete todos los campos');
-                return;
-            }
-
-            // Crear un nuevo producto
-            const product = {
-                name: name,
-                price: price,
-                description: description
-            };
-
-            // Agregar el producto a la lista de productos
-            products.push(product);
-
-            // Limpiar los campos
-            document.getElementById('product-name').value = '';
-            document.getElementById('product-price').value = '';
-            document.getElementById('product-description').value = '';
-
-            // Actualizar la lista de productos
-            displayProducts();
-        }
-
-        function displayProducts() {
-            const productList = document.getElementById('product-list');
-            productList.innerHTML = ''; // Limpiar la lista
-
-            // Recorrer los productos y mostrarlos en la interfaz
-            products.forEach((product, index) => {
-                const productDiv = document.createElement('div');
-                productDiv.classList.add('product');
-
-                productDiv.innerHTML = `
-                    <h3>${product.name}</h3>
-                    <p>Precio: $${product.price}</p>
-                    <p>${product.description}</p>
-                    <button onclick="buyProduct(${index})">Comprar</button>
-                `;
-
-                productList.appendChild(productDiv);
-            });
-        }
-
-        function buyProduct(index) {
-            const product = products[index];
-            alert(`Has comprado: ${product.name} por $${product.price}`);
-        }
-    </script>
->>>>>>> 5b6fbe22602f1a6003d143908b23c38238fa347d
+   <h2>EN MANTENIMIENTO</h2>
+   <h5>Somos una compañia encargada de vender productos, 
+      Un porcentaje de nuestras ventas se iran para alguna organizacion benefica</h5>
 </body>
 </html>
