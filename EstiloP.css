@@ -7,13 +7,6 @@ body h2{
     text-align-last: center;    
 }
 
-body h5{
-    margin: 100;
-    text-align-last: center;    
-}
-
-
-
 
 a{
     text-decoration: none;
@@ -47,4 +40,21 @@ nav a{
 
 nav a:hover{
     color: red;
+}
+ 
+div.Carro{
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.Carro img{
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+div button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
