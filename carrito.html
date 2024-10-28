@@ -15,7 +15,7 @@
 
     <div id="container">
         <!-- Botón para volver al inicio -->
-        <a href="/home/" class="nav-link">Volver al Inicio (Home)</a>
+        <a href="/home/" class="nav-link">Volver al Inicio</a>
 
         <!-- Sección de vendedores -->
         <div class="section" id="seller-section">
@@ -31,6 +31,10 @@
             <div class="form-group">
                 <label for="product-description">Descripción:</label>
                 <textarea id="product-description" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="product-image">Imagen del Producto:</label>
+                <input type="file" id="product-image" accept="image/*">
             </div>
             <button onclick="addProduct()">Agregar Producto</button>
         </div>
