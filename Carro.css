@@ -21,18 +21,18 @@ header {
 }
 
 .nav-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #6f0180;
-    color: #fff;
-    border: 2px solid #6f0180;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 10px; /* Para separar los enlaces */
+    display: inline-block; /* Permite que se vea como un botón */
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #6f0180; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: 2px solid #6f0180; /* Bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    margin: 10px; /* Separación entre enlaces */
 }
 
 .nav-link:hover {
-    background-color: #580169;
+    background-color: #580169; /* Color de fondo al pasar el ratón */
 }
 
 .section {

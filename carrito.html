@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Tienda Online - Cuidado Con El Puc</h1>
-        <h5>Somos una compañía encargada de vender productos. Un porcentaje de nuestras ventas irá para alguna organización benéfica.</h5>
+        <h5>Somos una compañía que apoya a los emprendedores con una plataforma marketplace. Un porcentaje de las ventas irá para alguna organización benéfica.</h5>
     </header>
 
     <div id="container">
@@ -32,15 +32,11 @@
                 <label for="product-description">Descripción:</label>
                 <textarea id="product-description" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
             </div>
-            <button onclick="addProduct()">Agregar Producto</button>
-        </div>
-
-        <!-- Sección de compradores -->
-        <div class="section" id="buyer-section">
-            <h2>Productos Disponibles (Comprador)</h2>
-            <div id="product-list">
-                <!-- Aquí se mostrarán los productos -->
+            <div class="form-group">
+                <label for="product-image">Imagen del Producto:</label>
+                <input type="file" id="product-image" accept="image/*">
             </div>
+            <button onclick="addProduct()">Agregar Producto</button>
         </div>
     </div>
 
