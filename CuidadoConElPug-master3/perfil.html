@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+
+    <header>
+        <a class="pugsito2" href="/home/"><img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+            <a href="/home/" class="nav-lin">Inicio</a>
+            <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+            <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>     
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Crear Perfil</h2>
+        <form id="profile-form" action="submit_profile.php" method="POST" onsubmit="return validateForm()">
+            <!-- Nombre de Usuario (solo letras y números, entre 3 y 20 caracteres) -->
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" name="username" pattern="[A-Za-z0-9]{3,20}" title="Solo se permiten letras y números. Longitud entre 3 y 20 caracteres." required>
+
+            <!-- Foto de Perfil -->
+            <label for="profile-photo">Foto de Perfil:</label>
+            <input type="file" id="profile-photo" name="profile-photo" accept="image/*" required>
+
+            <!-- Teléfono (solo 10 dígitos numéricos) -->
+            <label for="phone">Teléfono:</label>
+            <input type="text" id="phone" name="phone" pattern="\d{10}" inputmode="tel" title="El teléfono debe ser de 10 dígitos." required>
+
+            <!-- Dirección -->
+            <label for="address">Dirección:</label>
+            <textarea id="address" name="address"></textarea>
+
+            <!-- Ciudad -->
+            <label for="city">Ciudad:</label>
+            <select id="city" name="city" required>
+                <option value="">Selecciona tu ciudad</option>
+                <option value="CDMX">Ciudad de Mexico</option>
+                <option value="Guadalajara">Guadalajara</option>
+                <option value="Monterrey">Monterrey</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Cancun">Cancun</option>
+                <option value="Tijuana">Tijuana</option>
+                <option value="Mérida">Merida</option>
+                <option value="León">Leon</option>
+                <option value="Querétaro">Queretaro</option>
+                <option value="Toluca">Toluca</option>
+                <option value="Mazatlán">Mazatlan</option>
+            </select>
+
+            <!-- Términos y Condiciones -->
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                Acepto los <a href="/terminos-y-condiciones" target="_blank" class="terms-link">Términos y Condiciones</a> de este sitio.
+            </label>            
+
+            <button type="submit">Crear Perfil</button>
+        </form>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>
+

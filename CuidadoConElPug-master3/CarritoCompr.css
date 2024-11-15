@@ -1,0 +1,127 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+body h2{
+    margin: 100;
+    text-align-last: center;    
+}
+
+a{
+    text-decoration: none;
+    color: rgb(252, 250, 250);
+}
+
+header{ 
+    display: flex;
+    height: 80px;
+    background-color: #6f0180;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.pugsito2{
+    display: flex;
+    align-items: center;
+}
+
+.pugsito2 img{
+    height: 100px;
+    margin-right: 20px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 10px;
+
+}
+
+nav a:hover{
+    color: rgb(255, 109, 250);
+}
+
+
+
+
+
+/* Estilos para el pequeño menú (debajo del menú principal) */
+.footer-menu {
+    background-color: #f4f4f4; /* Color de fondo suave */
+    padding: 10px;             /* Espaciado alrededor del texto */
+    display: flex;             /* Usamos flexbox para alinear los textos */
+    justify-content: space-between; /* Distribuir espacio entre los elementos */
+    align-items: center;      /* Alineación vertical centrada */
+    font-size: 14px;           /* Tamaño de fuente pequeño */
+    border-top: 1px solid #ddd; /* Línea de separación */
+}
+
+/* Estilo para el texto de la izquierda con el icono */
+.footer-menu .izquierda {
+    color: green;             /* Color verde para el texto */
+    margin: 0;                /* Eliminar márgenes */
+    display: flex;            /* Usamos flexbox para alinear el icono y texto */
+    align-items: center;      /* Alinea verticalmente el icono y el texto */
+}
+
+.footer-menu .izquierda .icono-candado {
+    width: 16px;              /* Tamaño del icono */
+    height: 16px;             /* Tamaño del icono */
+    margin-right: 5px;        /* Espacio entre el icono y el texto */
+}
+
+/* Estilo para el texto del centro */
+.footer-menu .centro {
+    text-align: center;       /* Alinear el texto al centro */
+    flex: 2;                  /* Hace que este elemento ocupe más espacio */
+}
+
+/* Estilo para el texto de la derecha */
+.footer-menu .derecha {
+    text-align: right;        /* Alinear el texto a la derecha */
+    margin: 0;                /* Eliminar márgenes */
+    flex: 1;                  /* Hace que este elemento ocupe el espacio restante en el lado derecho */
+}
+
+/* Estilo para el enlace del "seguir comprando" */
+.footer-menu .derecha a {
+    color: #760081;           /* Color azul para el enlace */
+    text-decoration: none;    /* Eliminar subrayado */
+}
+
+.footer-menu .derecha a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+
+
+
+
+
+/* Estilos para el cuadro de envío */
+.cuadro-envio {
+    background-color: #f8def6;  /* Color de fondo claro */
+    border: 2px solid #57004e;  /* Borde verde */
+    padding: 20px;              /* Espaciado interno */
+    text-align: center;         /* Centrar el texto */
+    margin: 20px 0;             /* Margen superior e inferior */
+    border-radius: 8px;         /* Bordes redondeados */
+    font-size: 16px;            /* Tamaño de fuente */
+    max-width: 500px;           /* Limitar el ancho máximo */
+    margin-left: auto;          /* Centrar el cuadro horizontalmente */
+    margin-right: auto;
+}
+
+/* Estilos para el contenedor del icono y el texto de "Precio de envío" */
+.cuadro-envio .precio-envio {
+    display: flex;               /* Usamos flexbox para alinear el icono y el texto */
+    align-items: center;         /* Alineación vertical centrada */
+    justify-content: center;     /* Alinear al centro */
+}
+
+/* Estilo para el icono del camión */
+.cuadro-envio .icono-camion {
+    width: 20px;                 /* Ajusta el tamaño del icono */
+    height: 20px;                /* Ajusta el tamaño del icono */
+    margin-right: 8px;           /* Espacio entre el icono y el texto */
+}

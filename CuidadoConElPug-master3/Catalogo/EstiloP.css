@@ -1,0 +1,60 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+body h2{
+    margin: 100;
+    text-align-last: center;    
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header{ 
+    display: flex;
+    height: 100px;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.pugsito2{
+    display: flex;
+    align-items: center;
+}
+
+.pugsito2 img{
+    height: 100px;
+    margin-right: 20px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 10px;
+
+}
+
+nav a:hover{
+    color: red;
+}
+ 
+div.Carro{
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.Carro img{
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+div button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
