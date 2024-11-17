@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="EstiloP.css">
+   <title>Cuidado Con El Puc</title>	
+   <link rel="icon" href="pugsito.ico">
+</head>
+<body>
+    <header>
+        <a class="pugsito2" href="/home/"><img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+        <a href="/home/" class="nav-lin">Inicio</a>
+        <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+        <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+        <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+   </header >
+
+   <!-- Contenedor de productos -->
+   <div class="productos">
+        <div class="producto">
+            <h3>Producto 1</h3>
+            <p>Precio: $100</p>
+            <button onclick="agregarAlCarrito('Producto 1', 100)">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <h3>Producto 2</h3>
+            <p>Precio: $150</p>
+            <button onclick="agregarAlCarrito('Producto 2', 150)">Agregar al carrito</button>
+        </div>
+
+        <!-- Agregar más productos según sea necesario -->
+   </div>
+
+   <div class="Carro">
+    <button id="myButton1">
+        <img src="vender.webp" alt="Carro">
+    </button>
+   </div>
+
+   <div class="Comprar">
+    <a href="comprar.html" target="_blank">
+        <img src="Carrito.png" alt="Comprar">
+    </a>
+   </div>
+
+   <h2>EN MANTENIMIENTO</h2>
+
+   <a href="/Catalogo/">Ir al Catálogo</a>
+
+   <script>
+       // Función para agregar productos al carrito
+       function agregarAlCarrito(nombre, precio) {
+           // Obtener el carrito actual desde localStorage o inicializarlo
+           let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+           
+           // Buscar si el producto ya está en el carrito
+           const productoExistente = carrito.find(p => p.nombre === nombre);
+
+           if (productoExistente) {
+               // Si ya existe, incrementar la cantidad
+               productoExistente.cantidad += 1;
+           } else {
+               // Si no existe, agregarlo al carrito
+               carrito.push({ nombre, precio, cantidad: 1 });
+           }
+
+           // Guardar el carrito actualizado en localStorage
+           localStorage.setItem('carrito', JSON.stringify(carrito));
+           alert(`Agregaste ${nombre} al carrito.`);
+       }
+   </script>
+   
+   <script src="Carro.js"></script>
+</body>
+</html>
+

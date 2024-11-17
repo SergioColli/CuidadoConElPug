@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="EstiloP.css">
+   <title>Cuidado Con El Puc</title>	
+   <link rel="icon" href="pugsito.ico">
+</head>
+<body>
+    <header>
+        <a class="pugsito2" href="/home/">
+            <img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+            <a href="/home/" class="nav-lin">Inicio</a>
+            <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+            <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+        </nav>
+    </header>
+   
+    <div class="Carro">
+        <button id="myButton1">
+            <img src="Carrito.png" alt="Carro">
+        </button>
+    </div>
+
+    <h2>EN MANTENIMIENTO</h2>
+    <a href="/Catalogo/">Ir al Catálogo</a>
+
+    <h1>Catálogo de Productos</h1>
+
+    <!-- Filtros de búsqueda -->
+    <div class="filters">
+        <label for="gender">Sexo:</label>
+        <select id="gender" onchange="filterProducts()">
+            <option value="">Todos</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+
+        <label for="size">Talla:</label>
+        <select id="size" onchange="filterProducts()">
+            <option value="">Todas</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+
+        <label for="type">Tipo:</label>
+        <select id="type" onchange="filterProducts()">
+            <option value="">Todos</option>
+            <option value="jeans">Jeans</option>
+            <option value="pantalones">Pantalones</option>
+            <option value="camisas">Camisas</option>
+            <option value="boxers">Boxers</option>
+            <option value="chaquetas">Chaquetas</option>
+            <option value="pijamas">Pijamas</option>
+            <option value="trajes">Trajes</option>
+            <option value="vestidos">Vestidos</option>
+        </select>
+
+        <label for="searchInput">Buscar:</label>
+        <input type="text" id="searchInput" oninput="searchProducts()" placeholder="Buscar por nombre">
+    </div>
+
+    <!-- Contenedor del catálogo -->
+    <div class="catalog">
+        <!-- Ejemplo de producto -->
+        <div class="product" data-name="Producto 1" data-gender="hombre" data-size="M" data-type="camisa">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h4>Producto 1</h4>
+            <p>Talla: M</p>
+            <p>Precio: $20.00</p>
+            <button class="delete-button" onclick="eliminarProducto(this)">Eliminar</button>
+        </div>
+
+        <div class="product" data-name="Producto 2" data-gender="mujer" data-size="S" data-type="falda">
+            <img src="producto2.jpg" alt="Producto 2">
+            <h4>Producto 2</h4>
+            <p>Talla: S</p>
+            <p>Precio: $25.00</p>
+            <button class="delete-button" onclick="eliminarProducto(this)">Eliminar</button>
+        </div>
+    </div>
+
+    <!-- Enlace a la página para añadir productos -->
+    <a href="añadir.html" class="add-product-btn">Añadir Nuevo Producto</a>
+
+    <script src="Carro.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
