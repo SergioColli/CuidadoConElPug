@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="comprar.css">
+    <title>Carrito de Compras</title>
+    <link rel="icon" href="Carrito.png">
+</head>
+<body>
+
+    <header>
+        <a class="pugsito2" href="/home/"><img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+        <a href="/home/" class="nav-lin">Inicio</a>
+        <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+        <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+        <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+   </header >
+
+    <h1>Carrito de Compras</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-carrito">
+            <!-- Aquí se llenará con JavaScript -->
+        </tbody>
+    </table>
+    <h2 id="total-general">Total: $0</h2>
+    <script>
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const tablaCarrito = document.getElementById('tabla-carrito');
+            const totalGeneral = document.getElementById('total-general');
+
+            // Limpiar tabla
+            tablaCarrito.innerHTML = '';
+
+            let total = 0;
+            carrito.forEach(producto => {
+                const totalProducto = producto.precio * producto.cantidad;
+                total += totalProducto;
+
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${producto.nombre}</td>
+                    <td>$${producto.precio}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>$${totalProducto}</td>
+                `;
+                tablaCarrito.appendChild(fila);
+            });
+
+            totalGeneral.innerText = `Total: $${total}`;
+        }
+
+        // Cargar el carrito al abrir la página
+        window.onload = cargarCarrito;
+    </script>
+
+
+    <script src="comprar.js"></script>
+
+
+</body>
+</html>
