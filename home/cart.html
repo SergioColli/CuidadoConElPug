@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <title>Carrito de Compras</title>
+    <link rel="icon" href="Carrito.png">
+</head>
+<body>
+
+    <!-- Header con diseño solicitado -->
+    <header>
+        <a class="pugsito2" href="/home/">
+            <img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+            <a href="/home/" class="nav-lin">Inicio</a>
+            <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+            <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+        </nav>
+    </header>
+
+    <!-- Título del carrito -->
+    <h1>Carrito de Compras</h1>
+
+    <!-- Tabla con diseño solicitado -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-carrito">
+            <!-- Aquí se llenará con JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Total general -->
+    <h2 id="total-general">Total: $0</h2>
+
+    <!-- Botón de Comprar -->
+    <button id="buyButton">Comprar</button>
+    <button id="backButton">Regresar a Inicio</button>
+
+
+
+
+    <!-- Script del carrito -->
+    <script src="cart.js"></script>
+</body>
+</html>

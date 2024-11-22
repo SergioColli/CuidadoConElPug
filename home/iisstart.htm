@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EstiloP.css">
+    <title>Cuidado Con El Puc</title>
+    <link rel="icon" href="pugsito.ico">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <a class="pugsito2" href="/home/">
+        <img src="pugsito.png" alt="pugsitoimg">
+        <h3>Cuidado Con El Puc</h3>
+    </a>
+    <nav>
+        <a href="/home/" class="nav-link">Inicio</a>
+        <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
+        <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+        <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+        <div class="dropdown">
+            <button class="dropbtn">Categorías</button>
+            <div class="dropdown-content">
+                <a href="mujer.html" class="category">Mujer</a>
+                <a href="hombre.html" class="category">Hombre</a>
+                <a href="niños.html" class="category">Niños</a>
+                <a href="ofertas.html" class="category">Ofertas</a>
+            </div>
+        </div>
+                </div>
+    </nav>
+</header>
+
+
+<div class="side-banners">
+    <div class="banner-left">
+        <div class="banner">
+            <img src="Ropa/Oferta/Oferta2.jpg" alt="Promoción 1">
+            <h3>Descuentos del 50%</h3>
+        </div>
+        <div class="banner">
+            <img src="Ropa/Oferta/Oferta1.jpg" alt="Promoción 2">
+            <h3>Nueva Colección</h3>
+        </div>
+    </div>
+    <div class="banner-right">
+        <div class="banner">
+            <img src="Ropa/Hombre/Hombre2.jpg" alt="Promoción 3">
+            <h3>Envío Gratis</h3>
+        </div>
+        <div class="banner">
+            <img src="Ropa/Mujer/Mujer3.jpg" alt="Promoción 4">
+            <h3>Ofertas Especiales</h3>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="Carro">
+    <ul>
+        <li>
+            <a href="cart.html" id="cartIcon">
+                <img src="Carrito.png" alt="Carro" />
+                <span id="cartCount">0</span> <!-- Contador de productos en el carrito -->
+            </a>
+            
+    </button>
+  </div>
+
+
+<h1>   Catálogo de Productos</h1>
+
+<!-- Filtros de búsqueda -->
+<div class="filters">
+    <label for="gender">Sexo:</label>
+    <select id="gender" onchange="filterProducts()">
+        <option value="">Todos</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+    </select>
+
+    <label for="size">Talla:</label>
+    <select id="size" onchange="filterProducts()">
+        <option value="">Todas</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+    </select>
+
+    <label for="type">Tipo:</label>
+    <select id="type" onchange="filterProducts()">
+        <option value="">Todos</option>
+        <option value="jeans">Jeans</option>
+        <option value="pantalones">Pantalones</option>
+        <option value="camisas">Camisas</option>
+        <option value="boxers">Boxers</option>
+        <option value="chaquetas">Chaquetas</option>
+        <option value="pijamas">Pijamas</option>
+        <option value="trajes">Trajes</option>
+        <option value="vestidos">Vestidos</option>
+    </select>
+
+    <label for="searchInput">Buscar:</label>
+    <input type="text" id="searchInput" oninput="searchProducts()" placeholder="Buscar por nombre">
+</div>
+
+<!-- Contenedor del catálogo -->
+<div class="catalog">
+    <div class="product" data-name="Producto 1" data-gender="hombre" data-size="M" data-type="camisa">
+        <img src="producto1.jpg" alt="Producto 1">
+        <h4>Producto 1</h4>
+        <p>Talla: M</p>
+        <p>Precio: $20.00</p>
+        <button class="delete-button" onclick="eliminarProducto(this)">Eliminar</button>
+    </div>
+
+    <div class="product" data-name="Producto 1" data-gender="hombre" data-size="M" data-type="camisa">
+        <img src="producto1.jpg" alt="Producto 1">
+        <h4>Producto 1</h4>
+        <p>Talla: M</p>
+        <p>Precio: $20.00</p>
+        <button class="buy-button" onclick="addToCart('Producto 1', 'hombre', 'M', 20.00, 'producto1.jpg')">Comprar</button>
+    </div>
+    
+    
+</div>
+
+  
+<a href="añadir.html" class="add-product-btn">Añadir Nuevo Producto</a>
+
+</body>
+</html>
