@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Producto</title>
+  <link rel="stylesheet" href="Añadir.css">
+</head>
+<body>
+  <h2>Añadir Nuevo Producto</h2>
+  <form id="addProductForm" action="subir_producto.php" method="POST" enctype="multipart/form-data">
+    <label for="name">Nombre del Producto:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="gender">Sexo:</label>
+    <select id="gender" name="gender" required>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+    </select>
+
+    <label for="size">Talla:</label>
+    <select id="size" name="size" required>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+    </select>
+
+    <label for="type">Tipo de Ropa:</label>
+    <select id="type" name="type" required>
+        <option value="jeans">Jeans</option>
+        <option value="pantalones">Pantalones</option>
+        <option value="camisas">Camisas</option>
+        <option value="boxers">Boxers</option>
+        <option value="chaquetas">Chaquetas</option>
+        <option value="pijamas">Pijamas</option>
+        <option value="trajes">Trajes</option>
+        <option value="vestidos">Vestidos</option>
+    </select>
+
+    <label for="price">Precio:</label>
+    <input type="number" id="price" name="price" required>
+
+    <label for="productImage">Imagen del Producto:</label>
+    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+    <button type="submit">Añadir Producto</button>
+</form>
+
+  <a href="catalogo.php">Volver al Catálogo</a>
+</body>
+</html>
+
