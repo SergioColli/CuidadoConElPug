@@ -1,89 +1,255 @@
 /* Estilos generales */
 body {
-    font-family: Arial;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  body h2 {
-    margin: 100;
-    text-align: center;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #6f0180;
-    width: 100%;
-    box-sizing: border-box;
-    height: 80px;
-  }
-  
-  
-  h1 {
-    margin: 20px;
-    font-size: 2em;
-    color: #333;
-  }
-  
-  a {
-    text-decoration: none;
-    color: rgb(252, 250, 250);
-  }
-  
-  nav a {
-    font-weight: 600;
-    padding-right: 10px;
-  }
-  
-  nav a:hover {
-    color: red;
-  }
-  
-  /* Logo en el encabezado */
-  .pugsito2 {
-    display: flex;
-    align-items: center;
-  }
-  
-  .pugsito2 img {
-    height: 100px;
-    margin-right: 20px;
-  }
-  
-  /* Icono del carrito */
-  div.Carro {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  div.Carro img {
-    height: 50px;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  
-  div button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  div.Registro button {
-    background-color: aqua;
-  }
-  
-  nav a.Catalogo {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    padding-right: 10px;
-  }
-  
-  nav a.Catalogo:hover {
-    color: red; /* Cambiar a rojo al hover */
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+  background-image: url(FONDO1.png);
+}
+
+/* Header */
+header {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #6f0180;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu li {
+  position: relative;
+  margin-right: 20px;
+}
+
+header .menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header .menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+header .menu .submenu a {
+  color: #333;
+  padding: 10px 20px;
+  display: block;
+  text-align: left;
+}
+
+header .menu .submenu a:hover {
+  background-color: #f0f0f0;
+}
+
+header .menu li:hover .submenu {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom, #6f0180, #c084f5);
+  color: white;
+  padding: 50px 20px;
+}
+
+.hero .cta-button {
+  padding: 15px 30px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+  background-color: #ff3b1f;
+}
+
+
+
+/* Carrusel de Tarjetas */
+.cards {
+  margin: 50px 0; /* Margen superior e inferior */
+  padding: 20px; /* Espaciado interno */
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+  border-radius: 15px; /* Esquinas redondeadas para un diseño más moderno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar las tarjetas */
+  max-width: 90%; /* Limita el ancho para que no ocupe todo el espacio */
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
+}
+
+.cards h2 {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+/* Publicidad */
+.ads {
+  background: rgba(255, 235, 204, 0.8); /* Fondo con transparencia */
+  padding: 20px; /* Reduce un poco el padding para menor impacto */
+  margin: 40px 0; /* Margen más sutil */
+  border-radius: 10px; /* Mantén las esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  border: 1px solid #ffc87c; /* Añade un borde suave del mismo tono */
+}
+
+
+.ad-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ad-banner img {
+  height: 100px;
+  border-radius: 10px;
+}
+
+/* Productos Destacados */
+.featured-products {
+  color: #4b0160;
+  padding: 30px 20px;
+  background-image: url(FONDO1.png);
+  text-align: center; /* Centra el texto */
+}
+
+.featured-products h2 {
+  display: inline-block; /* Permite el cuadro ajustarse al texto */
+  padding: 10px 20px;
+  border: 2px solid #4b0160; /* Añade un borde */
+  background-color: #ffffff; /* Fondo para destacar el texto */
+  border-radius: 10px; /* Opcional: esquinas redondeadas */
+  color: #4b0160; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Negrita para resaltar */
+}
+
+.featured-products h2 {
+  margin-bottom: 20px;
+}
+
+.products-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.product .buy-button {
+  padding: 10px 20px;
+  background-color: #6f0180;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product .buy-button:hover {
+  background-color: #4b0160;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+/* Limitar tamaños de imágenes */
+header .pugsito2 img {
+  height: 50px;
+  width: auto;
+}
+
+header .Carro img {
+  height: 40px;
+  width: auto;
+}

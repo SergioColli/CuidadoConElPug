@@ -13,6 +13,7 @@ body {
   }
   
   header {
+    text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,6 +25,7 @@ body {
   }
   
   header * {
+    text-decoration: none;
     display: flex;
     height: 80px;
     align-items: center;
@@ -61,17 +63,16 @@ body {
     margin-right: 20px;
   }
   
-  /* Icono del carrito */
-  div.Carro {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  div.Carro img {
-    height: 50px;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
+  /* Ajustar el tamaño de la imagen del carrito */
+.Carro img {
+  width: 40px; /* Ajusta el ancho de la imagen */
+  height: auto; /* Mantiene las proporciones */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+  margin: 0; /* Elimina márgenes innecesarios */
+  padding: 5px; /* Opcional: espacio interno alrededor de la imagen */
+  border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
   
   div button {
     background: none;
@@ -103,23 +104,30 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
-  /* Botón Añadir Nuevo Producto */
-  .add-product-btn {
-    display: inline-block;
-    margin: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .add-product-btn:hover {
-    background-color: #45a049;
-  }
+
+
+  /* Estilo para los botones de Añadir al Carrito */
+.add-to-cart-btn {
+  background-color: #6f0180; /* Color morado consistente con el diseño */
+  color: white; /* Texto blanco para buen contraste */
+  border: none; /* Sin bordes */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 1em; /* Tamaño de texto adecuado */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Mano al pasar el cursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #540160; /* Un morado más oscuro para hover */
+  transform: scale(1.05); /* Pequeño efecto de escala al pasar el mouse */
+}
+
+.add-to-cart-btn:active {
+  background-color: #450150; /* Morado más oscuro para clic */
+  transform: scale(0.95); /* Leve reducción al hacer clic */
+}
+
   
   /* Estilos del catálogo */
   .catalog {
@@ -164,23 +172,6 @@ body {
     margin: 5px 0;
   }
   
-  /* Botón Eliminar */
-  .delete-button {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .delete-button:hover {
-    background-color: #d32f2f;
-  }
-  
   /* Contenedor del catálogo */
 .catalog {
   display: grid; /* Usar Grid para el diseño */
@@ -214,17 +205,6 @@ body {
   margin-bottom: 10px; /* Separación de la imagen y el contenido */
 }
 
-/* Botón para añadir al carrito */
-.add-to-cart-btn {
-  padding: 10px 15px; /* Espaciado interno */
-  background-color: #4CAF50; /* Fondo verde */
-  color: white; /* Texto blanco */
-  border: none; /* Sin bordes */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  transition: background-color 0.3s ease-in-out; /* Animación al pasar el mouse */
-}
-
 .add-to-cart-btn:hover {
   background-color: #45a049; /* Verde más oscuro en hover */
 }
@@ -239,3 +219,156 @@ footer {
   bottom: 0; /* Posición en la parte inferior */
   width: 100%; /* Ocupa el ancho completo */
 }
+
+
+.add-product {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.add-product-btn {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.add-product-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* Contenedor del carrito */
+#cartModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Encabezado del carrito */
+#cartModal h2 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+}
+
+/* Tabla de productos en el carrito */
+#cartTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#cartTable th, 
+#cartTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#cartTable th {
+  background-color: #6f0180;
+  color: white;
+  font-weight: bold;
+}
+
+#cartTable td img {
+  width: 50px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Total del carrito */
+#cartTotal {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Botones dentro del carrito */
+#cartModal button {
+  background-color: #6f0180;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#cartModal button:hover {
+  background-color: #540160;
+}
+
+#cartModal button:active {
+  transform: scale(0.95);
+}
+
+/* Botón para cerrar el carrito */
+#cartModal button.close-cart {
+  background-color: red;
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+#cartModal button.close-cart:hover {
+  background-color: darkred;
+}
+
+/* Fondo opaco al mostrar el carrito */
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+#cartModal button.pay-btn {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#cartModal button.pay-btn:hover {
+  background-color: #45a049; /* Verde más oscuro */
+}
+
+#cartModal button.pay-btn:active {
+  transform: scale(0.95);
+}
+

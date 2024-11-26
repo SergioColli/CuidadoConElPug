@@ -1,35 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/home/EstiloP.css">
-   <title>Cuidado Con El Puc</title>	
-   <link rel="icon" href="pugsito.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EstiloP.css">
+    <script src="script.js" defer></script>
+    <title>Cuidado Con El Puc</title>
+    <link rel="icon" href="pugsito.ico">
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
         <a class="pugsito2" href="/home/">
-            <img src="pugsito.png" alt="pugsitoimg">
+            <img src="pugsito.png" alt="Logo de Puc">
             <h3>Cuidado Con El Puc</h3>
         </a>
-        <nav class="main-nav">
-            <a href="/home/" class="nav-link">Inicio</a>
-            <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
-            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
-            <a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="/home/" class="nav-link">Inicio</a></li>
+                <li><a href="/Nosotros/" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a></li>
+                <li><a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Categorias</a>
+                    <ul class="submenu">
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Mujer</a></li>
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Hombre</a></li>
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Niño</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </header>
-   
-    <div class="Carro">
-        <button id="myButton1">
-            <img src="Carrito.png" alt="Carro">
-        </button>
-    </div>
-    <nav>
-        <a class="Catalogo" href="/Catalogo/catalogo.php">Catálogo de Productos</a>
-      </nav>
 
-    <script src="script.js"></script>
+    <!-- Sección de Bienvenida -->
+    <main>
+        <section class="hero">
+            <h1>¡Bienvenido a Cuidado Con El Puc!</h1>
+            <p>Explora nuestras colecciones exclusivas y encuentra todo lo que necesitas.</p>
+            <a href="/Catalogo/catalogo.php" target="_blank">
+                <button class="cta-button">Ir al Catálogo</button>
+              </a>        </section>
+
+        <!-- Carrusel de Tarjetas -->
+        <section class="cards">
+            <h2>Explora Nuestras Categorías</h2>
+            <div class="card-container">
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="Mujer.jpg" alt="Ropa de Mujer">
+                    <h3>Ropa de Mujer</h3>
+                    <p>Descubre lo último en moda femenina.</p>
+                </div>
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="hombre.jpg" alt="Ropa de Hombre">
+                    <h3>Ropa de Hombre</h3>
+                    <p>Estilo y confort para él.</p>
+                </div>
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="niño.jpg" alt="niños">
+                    <h3>Accesorios</h3>
+                    <p>Complementos para todos los gustos.</p>
+                </div>
+            </div>
+        </section>
+
+          
+
+        <!-- Productos Destacados -->
+        <section class="featured-products">
+            <h2>Productos Destacados</h2>
+            <div class="products-container">
+                <div class="product">
+                    <img src="Hombre/Hombre2.jpg" alt="Producto 1">
+                    <h3>Ir al catalogo</h3>
+                    <p>$499 MXN</p>
+                    <a href="/Catalogo/catalogo.php" target="_blank">
+                        <button class="buy-button">Ir al catalogo</button>
+                      </a>                </div>
+                <div class="product">
+                    <img src="Mujer/Mujer2.jpg" alt="Producto 2">
+                    <h3>Ir al catalogo</h3>
+                    <p>$799 MXN</p>
+                    <a href="/Catalogo/catalogo.php" target="_blank">
+                        <button class="buy-button">Ir al catalogo</button>
+                      </a>                     </div>
+                <div class="product">
+                    <img src="Niños/Niño2.jpg" alt="Producto 3">
+                    <h3>Ir al catalogo</h3>
+                    <p>$999 MXN</p>
+                    <a href="/Catalogo/catalogo.php" target="_blank">
+                        <button class="buy-button">Ir al catalogo</button>
+                      </a>                     </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Cuidado Con El Puc. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

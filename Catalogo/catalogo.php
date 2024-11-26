@@ -22,13 +22,15 @@
     </header>
    
     <div class="Carro">
-        <button id="myButton1">
-            <img src="Carrito.png" alt="Carro">
+        <button id="viewCartButton">
+            <img src="/Carrito.png" alt="Carro">
+            <span id="cartCount">0</span>
         </button>
     </div>
 
-    <h2>PROXIMAMENTE</h2>
-    <a href="/Catalogo/">Ir al Catálogo</a>
+    <div class="add-product">
+        <a href="/SubirProductos/añadir.html" class="add-product-btn">Añadir Nuevo Producto</a>
+    </div>
 
     <h1>Catálogo de Productos</h1>
 
@@ -64,37 +66,67 @@
         </select>
 
         <label for="searchInput">Buscar:</label>
-        <input type="text" id="searchInput" oninput="searchProducts()" placeholder="Buscar por nombre">
+        <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Buscar por nombre">
     </div>
 
-    <!-- Enlace a la página para añadir productos -->
-    <a href="/SubirProductos/añadir.html" class="add-product-btn">Añadir Nuevo Producto</a>
+    <!-- Catálogo de productos -->
+    <div class="catalog">
+        <?php
+        include 'db.php'; // Conexión a la base de datos
 
-  <!-- Catálogo de productos -->
-<div class="catalog">
-  <?php
-  include 'db.php'; // Conexión a la base de datos
+        $sql = "SELECT * FROM productos";
+        $result = $conn->query($sql);
 
-  $sql = "SELECT * FROM productos";
-  $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='product' 
+                         data-id='" . $row['id'] . "' 
+                         data-name='" . htmlspecialchars($row['nombre'], ENT_QUOTES) . "' 
+                         data-price='" . $row['precio'] . "' 
+                         data-gender='" . strtolower($row['sexo']) . "' 
+                         data-size='" . strtolower($row['talla']) . "' 
+                         data-type='" . strtolower($row['tipo']) . "'>
+                        <img src='/SubirProductos/imagenes/" . basename($row['imagen']) . "' alt='" . htmlspecialchars($row['nombre'], ENT_QUOTES) . "'>
+                        <h3>" . htmlspecialchars($row['nombre']) . "</h3>
+                        <p>Precio: $" . $row['precio'] . "</p>
+                        <button class='add-to-cart-btn'>Añadir al Carrito</button>
+                      </div>";
+            }
+        } else {
+            echo "<p>No hay productos disponibles en este momento.</p>";
+        }
 
-  if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-      echo "<div class='product' data-gender='" . strtolower($row['sexo']) . "' data-size='" . strtolower($row['talla']) . "' data-type='" . strtolower($row['tipo']) . "'>";
-      echo "<img src='/SubirProductos/imagenes/" . basename($row['imagen']) . "' alt='" . $row['nombre'] . "'>";
-      echo "<h3>" . $row['nombre'] . "</h3>";
-      echo "<p>Precio: $" . $row['precio'] . "</p>";
-      echo "<button class='add-to-cart-btn'>Añadir al Carrito</button>";
-      echo "</div>";
-    }
-  } else {
-    echo "<p>No hay productos disponibles en este momento.</p>";
-  }
+        $conn->close();
+        ?>
+    </div>
 
-  $conn->close();
-  ?>
-</div>
+    <!-- Carrito -->
+    <div id="cartModal" style="display: none;">
+        <h2>Carrito de Compras</h2>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se llena dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+        <h3 id="cartTotal">Total: $0</h3>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button class="close-cart" onclick="closeCart()">Cerrar</button>
+            <button class="pay-btn" onclick="redirectToPayment()">Pagar</button>
+        </div>
+    </div>
 
-    <script src="Filtros.js"></script>
+    <!-- Scripts -->
+    <script src="Filtros.js"></script> <!-- Tu script de filtros -->
+    <script src="carrito.js"></script> <!-- Script del carrito -->
 </body>
 </html>

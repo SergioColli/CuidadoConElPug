@@ -1,0 +1,110 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+/* Contenedor del formulario */
+.payment-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Título del formulario */
+.payment-form h2 {
+  margin-bottom: 20px;
+  color: #6f0180;
+}
+
+/* Grupos del formulario */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Campos de entrada */
+input {
+  width: calc(100% - 10px);
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Detección de tarjeta */
+.card-detection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Logo de la tarjeta */
+#card-logo {
+  width: 40px;
+  height: auto;
+}
+
+/* Botón de pago */
+button {
+  background-color: #6f0180;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #540160;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #450150;
+  transform: scale(0.95);
+}
+
+/* Total a Pagar */
+.total-amount {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.total-amount label {
+  font-weight: bold;
+  color: #333;
+}
+
+#total-payment {
+  width: calc(100% - 10px);
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4; /* Fondo gris claro para readonly */
+  color: #333;
+  cursor: not-allowed; /* Cursor indica que es de solo lectura */
+}

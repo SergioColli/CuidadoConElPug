@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="EstiloP.css">
+   <title>Carrito de Compras</title>
+   <link rel="icon" href="pugsito.ico">
+</head>
+<body>
+    <header>
+        <a class="pugsito2" href="/home/">
+            <img src="pugsito.png" alt="pugsitoimg">
+            <h3>Cuidado Con El Puc</h3>
+        </a>
+        <nav>
+            <a href="/home/" class="Catalogo">Inicio</a>
+            <a href="/Catalogo/catalogo.php" class="Catalogo">Catálogo de Productos</a>
+            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="Catalogo">Contacto</a>
+            <a href="/Iniciarsexcion/inicio-sesion.html" class="Catalogo">Empezar</a>
+        </nav>
+    </header>
+   
+    <main>
+        <h1>Catálogo de Productos</h1>
+        <div class="catalog">
+            <!-- Producto 1 -->
+            <div class="product" data-id="1" data-name="Producto 1" data-price="150">
+                <h3>Producto 1</h3>
+                <p>Precio: $150</p>
+                <button class="add-to-cart-btn">Añadir al Carrito</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product" data-id="2" data-name="Producto 2" data-price="200">
+                <h3>Producto 2</h3>
+                <p>Precio: $200</p>
+                <button class="add-to-cart-btn">Añadir al Carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Carrito de Compras</h2>
+            <ul id="cartItems">
+                <!-- Aquí se agregarán los productos dinámicamente -->
+            </ul>
+            <p id="totalPrice">Total: $0</p>
+            <button id="checkoutBtn">Proceder al Pago</button>
+            <button id="closeCart">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="carro.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puc Pay</title>
+  <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+  <div class="payment-form">
+    <h2>Área de Pago 💳</h2>
+
+    <!-- Mostrar el total a pagar -->
+    <div class="total-amount">
+      <label for="total-payment">Total a Pagar:</label>
+      <input type="text" id="total-payment" readonly value="$0.00">
+    </div>
+
+    <!-- Detección de tarjeta -->
+    <div class="card-detection">
+      <label for="card-number">Número de Tarjeta:</label>
+      <input type="text" id="card-number" maxlength="16" placeholder="0000 0000 0000 0000" oninput="detectCardType()">
+      <img id="card-logo" alt="Logo de la tarjeta" src="">
+    </div>
+
+    <div class="form-group">
+      <label for="cardholder-name">Nombre del Titular:</label>
+      <input type="text" id="cardholder-name" placeholder="Nombre Completo">
+    </div>
+
+    <div class="form-group">
+      <label for="expiration-date">Fecha de Expiración:</label>
+      <input type="month" id="expiration-date">
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" maxlength="3" placeholder="123">
+    </div>
+
+    <div class="form-group">
+      <label for="billing-address">Dirección de Facturación:</label>
+      <input type="text" id="billing-address" placeholder="Dirección completa">
+    </div>
+
+    <button type="button" onclick="processPayment()">Pagar</button>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
