@@ -166,6 +166,18 @@ header .menu li:hover .submenu {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
   border: 1px solid #ffc87c; /* Añade un borde suave del mismo tono */
 }
+/* Estilo para los íconos de redes sociales */
+footer .social-icons img {
+  width: 40px; /* Ajusta el tamaño a tu preferencia */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  margin: 0 10px; /* Espaciado entre los íconos */
+  transition: transform 0.3s ease; /* Animación para el efecto hover */
+}
+
+footer .social-icons img:hover {
+  transform: scale(1.2); /* Efecto de aumento al pasar el mouse */
+  cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
 
 
 .ad-banner {
