@@ -1,60 +1,632 @@
-body{
-    font-family: Arial;
-    margin: 0;
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+  background-image: url(FONDO1.png);
 }
-body h2{
-    margin: 100;
-    text-align-last: center;    
+
+/* Header */
+header {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #6f0180;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu li {
+  position: relative;
+  margin-right: 20px;
+}
+
+header .menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header .menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+header .menu .submenu a {
+  color: #333;
+  padding: 10px 20px;
+  display: block;
+  text-align: left;
+}
+
+header .menu .submenu a:hover {
+  background-color: #f0f0f0;
+}
+
+header .menu li:hover .submenu {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom, #6f0180, #c084f5);
+  color: white;
+  padding: 50px 20px;
+}
+
+/* Estilos para el botón de "Ir al Catálogo" */
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #ff006e;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #6f0180;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:focus {
+  outline: none;
+  border: 2px solid #ff006e;
+  box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
+}
+
+.cta-button:active {
+  background-color: #e6005c;
+  transform: translateY(1px);
 }
 
 
-a{
-    text-decoration: none;
-    color: rgb(252, 250, 250);
+
+/* Carrusel de Tarjetas */
+.cards {
+  margin: 50px 0; /* Margen superior e inferior */
+  padding: 20px; /* Espaciado interno */
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+  border-radius: 15px; /* Esquinas redondeadas para un diseño más moderno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar las tarjetas */
+  max-width: 90%; /* Limita el ancho para que no ocupe todo el espacio */
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
 }
 
-header{ 
-    display: flex;
-    height: 80px;
-    background-color: #6f0180;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
+.cards h2 {
+  margin-bottom: 20px;
 }
 
-.pugsito2{
-    display: flex;
-    align-items: center;
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 
-.pugsito2 img{
-    height: 100px;
-    margin-right: 20px;
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav a{
-    font-weight: 600;
-    padding-right: 10px;
-
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-nav a:hover{
-    color: red;
-}
- 
-div.Carro{
-    display: flex;
-    justify-content: flex-end;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-div.Carro img{
-    height: 50px;
-    margin-top: 10px;
-    margin-right: 10px;
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
 }
 
-div button {
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Publicidad */
+.ads {
+  background: rgba(255, 235, 204, 0.8); /* Fondo con transparencia */
+  padding: 20px; /* Reduce un poco el padding para menor impacto */
+  margin: 40px 0; /* Margen más sutil */
+  border-radius: 10px; /* Mantén las esquinas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  border: 1px solid #ffc87c; /* Añade un borde suave del mismo tono */
 }
+
+
+.ad-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ad-banner img {
+  height: 100px;
+  border-radius: 10px;
+}
+
+/* Productos Destacados */
+.featured-products {
+  color: #4b0160;
+  padding: 30px 20px;
+  background-image: url(FONDO1.png);
+  text-align: center; /* Centra el texto */
+}
+
+.featured-products h2 {
+  display: inline-block; /* Permite el cuadro ajustarse al texto */
+  padding: 10px 20px;
+  border: 2px solid #4b0160; /* Añade un borde */
+  background-color: #ffffff; /* Fondo para destacar el texto */
+  border-radius: 10px; /* Opcional: esquinas redondeadas */
+  color: #4b0160; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Negrita para resaltar */
+}
+
+.featured-products h2 {
+  margin-bottom: 20px;
+}
+
+.products-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.product .buy-button {
+  padding: 10px 20px;
+  background-color: #6f0180;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product .buy-button:hover {
+  background-color: #4b0160;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+/* Limitar tamaños de imágenes */
+header .pugsito2 img {
+  height: 50px;
+  width: auto;
+}
+
+header .Carro img {
+  height: 40px;
+  width: auto;
+}
+
+/* Sección de Banners */
+.banners {
+  padding: 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.banners h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.banner {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner p {
+  margin: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.banner:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para textos de los banners */
+.banner p {
+  margin: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.banner p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6f0180;
+}
+
+/* Estilos para la nueva sección de banners */
+.banners {
+  margin: 40px 0;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.banner {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  width: 23%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.banner p {
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.banner:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para los testimonios */
+/* Estilos para la sección de Testimonios */
+.testimonials {
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: #6f0180;
+  margin-bottom: 30px;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px; /* Establece un límite para el ancho total */
+}
+
+.testimonial {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.testimonial h4 {
+  font-size: 1.1rem;
+  color: #6f0180;
+  margin-top: 15px;
+}
+
+/* Estilos para el blog */
+.blog {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-post {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-post img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.blog-post h3 {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.blog-post p {
+  padding: 10px;
+  font-size: 1rem;
+  color: #777;
+}
+
+.blog-post:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para la sección de suscripción al boletín */
+.subscription {
+  background-color: #6f0180;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.subscription h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.subscription p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.subscription-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.subscription-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #6f0180;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscription-form button:hover {
+  background-color: #ddd;
+}
+
+
+
+/* Estilos para la sección de Ropa de Estación */
+.seasonal-clothing {
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.seasonal-clothing h2 {
+  font-size: 2rem;
+  color: #6f0180;
+  margin-bottom: 30px;
+}
+
+.seasonal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.seasonal-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.seasonal-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.seasonal-card h3 {
+  font-size: 1.3rem;
+  color: #6f0180;
+  margin-top: 15px;
+}
+
+.seasonal-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.seasonal-card:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos específicos por estación */
+.winter {
+  background-color: #e6f7ff;
+}
+
+.spring {
+  background-color: #e9f7df;
+}
+
+.summer {
+  background-color: #fff7e6;
+}
+
+.autumn {
+  background-color: #ffe6cc;
+}
+
+
+/* Estilos para la sección de Preguntas Frecuentes */
+/* Estilos para la sección de Preguntas Frecuentes */
+.faq-section {
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #6f0180;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px; /* Establece un límite para el ancho total */
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+}
+
+.faq-item h3 {
+  font-size: 1.25rem;
+  color: #6f0180;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #555;
+}
+

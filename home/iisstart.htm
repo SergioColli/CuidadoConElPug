@@ -1,34 +1,208 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="EstiloP.css">
+    <script src="script.js" defer></script>
     <title>Cuidado Con El Puc</title>
     <link rel="icon" href="pugsito.ico">
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
-        <a class="pugsito2" href="/home/"><img src="pugsito.png" alt="pugsitoimg">
+        <a class="pugsito2" ">
+            <img src="pugsito.png" alt="Logo de Puc">
             <h3>Cuidado Con El Puc</h3>
         </a>
         <nav>
-            <a href="/home/" class="nav-lin">Inicio</a>
-            <a href="/Nosotros/" class="nav-link">Sobre Nosotros</a>
-            <a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a>
+            <ul class="menu">
+                <li><a href="/home/" class="nav-link">Inicio</a></li>
+                <li><a href="/Nosotros/" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="https://www.facebook.com/luisenrique.pucbarajas.5" class="nav-link">Contacto</a></li>
+                <li><a href="/Iniciarsexcion/inicio-sesion.html" class="nav-link">Empezar</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Mujer</a></li>
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Hombre</a></li>
+                        <li><a href="/Catalogo/catalogo.php">Ropa de Niño</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </header>
-    <div class="Carro">
-        <button id="myButton1" onclick="window.location.href='carrito.html';">
-            <img src="vender.png" alt="Carro">
-        </button>
-    </div>
 
-    <h2>Productos Disponibles</h2>
-    <div id="product-list">
-        <!-- Aquí se mostrará la lista de productos -->
-    </div>
+    <!-- Sección de Bienvenida -->
+    <main>
+        <section class="hero">
+            <h1>¡Bienvenido a Cuidado Con El Puc!</h1>
+            <p>Explora nuestras colecciones exclusivas y encuentra todo lo que necesitas.</p>
+            <a href="/Catalogo/catalogo.php" target="_blank">
+                <button class="cta-button">Ver ofertas y productos</button>
+            </a>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Carrusel de Categorías -->
+        <section class="cards">
+            <h2>Explora Nuestras Categorías</h2>
+            <div class="card-container">
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="Mujer.jpg" alt="Ropa de Mujer">
+                    <h3>Ropa de Mujer</h3>
+                    <p>Descubre lo último en moda femenina.</p>
+                </div>
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="hombre.jpg" alt="Ropa de Hombre">
+                    <h3>Ropa de Hombre</h3>
+                    <p>Estilo y confort para él.</p>
+                </div>
+                <div class="card" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="niño.jpg" alt="niños">
+                    <h3>Ropa de niños</h3>
+                    <p>Complementos para todos los gustos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Banners -->
+        <section class="banners">
+            <h2>Nuestras Promociones</h2>
+            <div class="banner-container">
+                <div class="banner" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="oferta.jpg" alt="Ofertas">
+                    <p>Aprovecha descuentos de hasta el 50%!</p>
+                </div>
+                <div class="banner" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="Promocion.jpg" alt="Novedades">
+                    <p>Descubre lo más nuevo en nuestra colección.</p>
+                </div>
+                <div class="banner" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="Promocion1.jpg" alt="Rebajas">
+                    <p>Grandes rebajas en productos seleccionados.</p>
+                </div>
+                <div class="banner" onclick="window.location.href='/Catalogo/catalogo.php'">
+                    <img src="promocion2.jpg" alt="Compra a Plazos">
+                    <p>Compra ahora y paga en cómodas cuotas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonials">
+            <section class="testimonials">
+                <h2>¿Qué dicen nuestros clientes?</h2>
+                <div class="testimonial-container">
+                    <div class="testimonial">
+                        <p>"¡Excelente calidad y atención al cliente! Siempre encuentro lo que necesito y me siento muy bien atendido."</p>
+                        <h4>- Juan Pérez</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Me encanta comprar aquí. Los envíos son rápidos y los productos son tal como los describen. ¡Definitivamente volveré!"</p>
+                        <h4>- Ana López</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"La experiencia de compra online fue muy fácil y fluida. Además, los precios son muy accesibles. 100% recomendados."</p>
+                        <h4>- Carlos Gómez</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"El producto llegó en perfectas condiciones y en el tiempo prometido. Me sorprendió la calidad, ¡sin duda volveré a comprar!"</p>
+                        <h4>- Laura Martínez</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Una tienda online increíble. Tienen una gran variedad de productos y siempre ofrecen promociones especiales. ¡Muy feliz con mi compra!"</p>
+                        <h4>- Pedro Sánchez</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"El servicio al cliente es excepcional. Me ayudaron a resolver todas mis dudas y la entrega fue muy rápida. ¡Excelente!"</p>
+                        <h4>- María Torres</h4>
+                    </div>
+                </div>
+            </section>
+            
+
+        <!-- Blog -->
+        <section class="blog">
+            <h2>Últimas Publicaciones</h2>
+            <div class="blog-container">
+                <div class="blog-post">
+                    <img src="consejos.jpg" alt="Post 1">
+                    <h3>Consejos para combinar tu ropa</h3>
+                    <p>Descubre cómo destacar con las mejores combinaciones de temporada.</p>
+                </div>
+                <div class="blog-post">
+                    <img src="combinar.jpg" alt="Post 2">
+                    <h3>10 prendas básicas para tu guardarropa</h3>
+                    <p>Te contamos qué piezas son esenciales en cualquier armario.</p>
+                </div>
+                <div class="blog-post">
+                    <img src="Moda.jpg" alt="Post 3">
+                    <h3>Tendencias de moda 2024</h3>
+                    <p>Mira qué estilos dominarán este año y prepárate para brillar.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- Ropa de Estación -->
+<section class="seasonal-clothing">
+    <h2>Ropa de Estación</h2>
+    <div class="seasonal-cards">
+        <div class="seasonal-card winter">
+            <img src="invierno.jpg" alt="Ropa de Invierno">
+            <h3>Invierno</h3>
+            <p>Descubre lo último en moda de invierno, abrigos y bufandas para mantenerte cálido.</p>
+        </div>
+        <div class="seasonal-card spring">
+            <img src="primavera.jpg" alt="Ropa de Primavera">
+            <h3>Primavera</h3>
+            <p>Flores, colores y frescura para la temporada de primavera.</p>
+        </div>
+        <div class="seasonal-card summer">
+            <img src="verano.jpg" alt="Ropa de Verano">
+            <h3>Verano</h3>
+            <p>Ropa ligera y cómoda para disfrutar del sol y las altas temperaturas.</p>
+        </div>
+        <div class="seasonal-card autumn">
+            <img src="Otoño.jpg" alt="Ropa de Otoño">
+            <h3>Otoño</h3>
+            <p>Colores cálidos y capas ligeras para disfrutar de la temporada de otoño.</p>
+        </div>
+    </div>
+</section>
+
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Cuánto tarda el envío?</h3>
+                    <p>El envío suele tardar entre 3 y 5 días hábiles.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Puedo devolver un producto?</h3>
+                    <p>Sí, aceptamos devoluciones dentro de los primeros 30 días.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cuáles son las formas de pago?</h3>
+                    <p>Aceptamos tarjetas de crédito, débito y pagos en cuotas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Cuidado Con El Puc. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        </div>
+    </footer>
 </body>
 </html>
