@@ -1,60 +1,374 @@
-body{
+/* Estilos generales */
+body {
     font-family: Arial;
     margin: 0;
-}
-body h2{
-    margin: 100;
-    text-align-last: center;    
-}
-
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-header{ 
     display: flex;
-    height: 100px;
-    background-color: aqua;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  body h2 {
+    margin: 100;
+    text-align: center;
+  }
+  
+  header {
+    text-decoration: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-}
-
-.pugsito2{
+    padding: 20px;
+    background-color: #6f0180;
+    width: 100%;
+    box-sizing: border-box;
+    height: 80px;
+  }
+  
+  header * {
+    text-decoration: none;
     display: flex;
+    height: 80px;
     align-items: center;
-}
-
-.pugsito2 img{
-    height: 100px;
-    margin-right: 20px;
-}
-
-nav a{
+    padding: 12px;
+  }
+  
+  h1 {
+    margin: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(252, 250, 250);
+  }
+  
+  nav a {
     font-weight: 600;
     padding-right: 10px;
-
-}
-
-nav a:hover{
+  }
+  
+  nav a:hover {
     color: red;
-}
- 
-div.Carro{
+  }
+  
+  /* Logo en el encabezado */
+  .pugsito2 {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .pugsito2 img {
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  /* Ajustar el tamaño de la imagen del carrito */
+.Carro img {
+  width: 40px; /* Ajusta el ancho de la imagen */
+  height: auto; /* Mantiene las proporciones */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+  margin: 0; /* Elimina márgenes innecesarios */
+  padding: 5px; /* Opcional: espacio interno alrededor de la imagen */
+  border-radius: 5px; /* Opcional: bordes redondeados */
 }
 
-div.Carro img{
-    height: 50px;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-div button {
+  
+  div button {
     background: none;
     border: none;
     cursor: pointer;
+  }
+  
+  div.Registro button {
+    background-color: aqua;
+  }
+  
+  /* Filtros de búsqueda */
+  .filters {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .filters label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+  /* Estilo para los botones de Añadir al Carrito */
+.add-to-cart-btn {
+  background-color: #6f0180; /* Color morado consistente con el diseño */
+  color: white; /* Texto blanco para buen contraste */
+  border: none; /* Sin bordes */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 1em; /* Tamaño de texto adecuado */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Mano al pasar el cursor */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
+
+.add-to-cart-btn:hover {
+  background-color: #540160; /* Un morado más oscuro para hover */
+  transform: scale(1.05); /* Pequeño efecto de escala al pasar el mouse */
+}
+
+.add-to-cart-btn:active {
+  background-color: #450150; /* Morado más oscuro para clic */
+  transform: scale(0.95); /* Leve reducción al hacer clic */
+}
+
+  
+  /* Estilos del catálogo */
+  .catalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .product:hover {
+    transform: scale(1.05);
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    font-size: 1em;
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  /* Contenedor del catálogo */
+.catalog {
+  display: grid; /* Usar Grid para el diseño */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas flexibles */
+  gap: 20px; /* Espaciado entre las tarjetas */
+  margin: 20px; /* Espaciado alrededor del catálogo */
+  padding: 10px; /* Espaciado interno */
+}
+
+/* Tarjeta del producto */
+.product {
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Centrar contenido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease-in-out; /* Animación en hover */
+}
+
+/* Efecto hover en la tarjeta del producto */
+.product:hover {
+  transform: scale(1.05); /* Aumenta ligeramente al pasar el mouse */
+}
+
+/* Imagen del producto */
+.product img {
+  width: 100%; /* Imagen se ajusta al ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  margin-bottom: 10px; /* Separación de la imagen y el contenido */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #45a049; /* Verde más oscuro en hover */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Centrar texto */
+  padding: 10px; /* Espaciado interno */
+  background-color: #6f0180; /* Fondo morado */
+  color: white; /* Texto blanco */
+  position: sticky; /* Pegado al fondo de la pantalla */
+  bottom: 0; /* Posición en la parte inferior */
+  width: 100%; /* Ocupa el ancho completo */
+}
+
+
+.add-product {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.add-product-btn {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-product-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.add-product-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* Contenedor del carrito */
+#cartModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Encabezado del carrito */
+#cartModal h2 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+}
+
+/* Tabla de productos en el carrito */
+#cartTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#cartTable th, 
+#cartTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#cartTable th {
+  background-color: #6f0180;
+  color: white;
+  font-weight: bold;
+}
+
+#cartTable td img {
+  width: 50px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Total del carrito */
+#cartTotal {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Botones dentro del carrito */
+#cartModal button {
+  background-color: #6f0180;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#cartModal button:hover {
+  background-color: #540160;
+}
+
+#cartModal button:active {
+  transform: scale(0.95);
+}
+
+/* Botón para cerrar el carrito */
+#cartModal button.close-cart {
+  background-color: red;
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+#cartModal button.close-cart:hover {
+  background-color: darkred;
+}
+
+/* Fondo opaco al mostrar el carrito */
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+#cartModal button.pay-btn {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#cartModal button.pay-btn:hover {
+  background-color: #45a049; /* Verde más oscuro */
+}
+
+#cartModal button.pay-btn:active {
+  transform: scale(0.95);
+}
+
